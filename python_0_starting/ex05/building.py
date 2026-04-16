@@ -1,17 +1,12 @@
 import sys
 
-def main():
-	string = ""
+def count_characters(string) -> str:
+	"""Parameters:
+		string (str): the string to be described
 
-	if len(sys.argv) > 2:
-		print ("AssertionError: more than one argument is provided")
-		sys.exit()
-	elif len(sys.argv) == 1:
-		while string == "":
-			string = input("Please, provide this programm with one string: \n")
-	else:
-		string = sys.argv[1]
-	
+	Returns:
+		a description of the string (number of characters, upper and lower cases, digit, punctuation marks and spaces)"""
+
 	upper = 0
 	lower = 0
 	punc = 0
@@ -37,6 +32,22 @@ def main():
 {space} spaces
 {digit} digits """
 
+	return result
+
+def main():
+	string = ""
+
+	if len(sys.argv) > 2:
+		print ("AssertionError: more than one argument is provided")
+		sys.exit()
+	elif len(sys.argv) == 1:
+		while string == "":
+			string = input("Please, provide this programm with one string: \n")
+	else:
+		string = sys.argv[1]
+	
+	# help(count_characters)
+	result = count_characters(string)
 	print(result)
 
 

@@ -1,6 +1,7 @@
 import os
 
 def ft_tqdm(lst: range) -> None:
+	"Shows a loading bar based on the range given"
 
 	total = len(lst)
 	size = os.get_terminal_size()

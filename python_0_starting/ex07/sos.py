@@ -30,6 +30,8 @@ MORSE = {' ': '/',
 }
 
 def main():
+    "Transform an alpha string in morse code"
+
 	if (len(sys.argv) != 2):
 		print("AssertionError: the arguments are bad")
 		sys.exit()

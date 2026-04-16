@@ -2,6 +2,8 @@ import sys
 from ft_filter import ft_filter
 
 def wordLength(word, length):
+	"Compares the word's length to a given length"
+
 	if (len(word) > length):
 		return True
 	else:
@@ -13,6 +15,9 @@ def main():
 		sys.exit()
 	
 	words = sys.argv[1].split()
+
+	# help(wordLength)
+	
 	try:
 		length = int(sys.argv[2])
 		long_words = ft_filter(lambda seq: wordLength(seq, length), words)
