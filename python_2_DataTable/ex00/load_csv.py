@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def load(path: str) -> pd.DataFrame:
     '''Loads a csv doc with a data set, \
     writes its dimensions and returns it'''
