@@ -6,11 +6,18 @@ build-backend = "setuptools.build_meta"
 name = "ft_package"
 version = "0.0.1"
 description = "A sample test package"
+readme = "README.md"
 authors =[
 	{name = "sfraslin"},
 	{email = "sfraslin@student.42.fr"}
 ]
-license = {text = "MIT"}
+license = "MIT"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS independent",
+]
+license-files = ["LICENSE"]
 
 [project.urls]
 Homepage = "https://github.com/SFr28/ft_package"
