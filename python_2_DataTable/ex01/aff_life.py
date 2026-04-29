@@ -1,9 +1,8 @@
 from load_csv import load
-import pandas as pd
 import matplotlib.pyplot as plt
 
 
-def aff(data: pd.DataFrame):
+def aff_life(data: pd.DataFrame):
     '''
         Fonction to get the correct country's data and to create a graph.
     '''
@@ -25,7 +24,7 @@ def aff(data: pd.DataFrame):
 def main():
     '''
         Program that loads the file "life_expectancy_years.csv" and displays \
-        the France information about life expectancy since the 1800s.
+        France information about life expectancy since the 1800s.
     '''
 
     data = load("life_expectancy_years.csv")
@@ -34,7 +33,8 @@ def main():
         print('Failed to load dataset')
         return
 
-    aff(data)
+    aff_life(data)
+
 
 if __name__ == "__main__":
     main()
