@@ -44,8 +44,7 @@ def aff_pop(data):
     plt.ylabel('Population')
     plt.legend(loc='lower right')
 
-    plt.yticks([20000000, 40000000, 60000000],
-                labels=['20M', '40M', '60M'])
+    plt.yticks([20000000, 40000000, 60000000], labels=['20M', '40M', '60M'])
 
     plt.show()
 

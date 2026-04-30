@@ -2,7 +2,7 @@ from load_csv import load
 import matplotlib.pyplot as plt
 
 
-def aff_life(data: pd.DataFrame):
+def aff_life(data):
     '''
         Fonction to get the correct country's data and to create a graph.
     '''
