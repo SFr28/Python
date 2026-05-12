@@ -9,12 +9,20 @@ class Baratheon(Character):
         self.family_name = 'Baratheon'
         self.eyes = 'brown'
         self.hairs = 'dark'
-    
-    def __str__(self):
+
+    def __str__(self) -> str:
+        """
+        Informal string representation of the object,
+        aimed at the user
+        """
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def __repr__(self):
-        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
+        """
+        Official string representation of the object,
+        aimed at the programmer
+        """
+        return self.__str__()
 
 
 class Lannister(Character):
@@ -23,15 +31,23 @@ class Lannister(Character):
         """Creating a Lannister member"""
         super().__init__(first_name, is_alive)
         self.family_name = 'Lannister'
-        self.eyes= 'blue'
-        self.hairs= 'light'
-    
-    def __str__(self):
+        self.eyes = 'blue'
+        self.hairs = 'light'
+
+    def __str__(self) -> str:
+        """
+        Informal string representation of the object,
+        aimed at the user
+        """
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def __repr__(self):
-        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
-    
+        """
+        Official string representation of the object,
+        aimed at the programmer
+        """
+        return self.__str__()
+
     @classmethod
     def create_lannister(self, first_name, is_alive):
         """Creating a Lannister member"""
