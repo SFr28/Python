@@ -20,8 +20,8 @@ def projection_life(dataIncome, dataLife):
     plt.scatter(xpoints, ypoints)
     plt.ylabel('Life Expectancy')
     plt.xlabel('Gross domestic product')
-    plt.xticks([300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000], 
-    labels=['300', '', '', '', '', '', '' ,'1k', '', '', '', '', '', '', '', '', '10k'])
+    plt.xscale('log')
+    plt.xticks([300, 1000, 10000], labels=['300', '1k', '10k'])
     norm = mlp.colors.Normalize(vmin=300, vmax=10000, clip=True)
     norm(xpoints)
     plt.title('1900')
