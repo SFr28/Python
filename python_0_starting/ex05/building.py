@@ -1,7 +1,7 @@
 import sys
 
 
-def count_characters(string) -> str:
+def count_characters(string: str) -> str:
     """Parameters:
         string (str): the string to be described
 
@@ -41,18 +41,21 @@ characters:
 def main():
     string = ""
 
-    if len(sys.argv) > 2:
-        print("AssertionError: more than one argument is provided")
-        sys.exit()
-    elif len(sys.argv) == 1:
-        while string == "":
-            string = input("Please, provide this programm with one string: \n")
-    else:
-        string = sys.argv[1]
+    try:
+        if len(sys.argv) > 2:
+            assert len(sys.argv) == 2, "more than one argument is provided"
+        elif len(sys.argv) == 1:
+            print("What is the text to count?", flush=True)
+            while string == "":
+                string = sys.stdin.readline()
+        else:
+            string = sys.argv[1]
+        # help(count_characters)
+        result = count_characters(string)
+        print(result)
 
-    help(count_characters)
-    result = count_characters(string)
-    print(result)
+    except AssertionError as error:
+        print("Assertion error:", error)
 
 
 if __name__ == "__main__":
