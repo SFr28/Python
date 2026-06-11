@@ -51,7 +51,7 @@ def main():
         assert len(sys.argv) == 2, "the arguments are bad"
 
         encoding(sys.argv[1].upper())
-    
+
     except AssertionError as error:
         print("Assertion error:", error)
     except Exception as error:
