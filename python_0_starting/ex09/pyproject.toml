@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools >= 77.0.3"]
+requires = ["setuptools>=78.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -11,13 +11,10 @@ authors =[
 	{name = "sfraslin"},
 	{email = "sfraslin@student.42.fr"}
 ]
-license = "MIT"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS independent",
 ]
+license = "MIT"
 license-files = ["LICENSE"]
-
-[project.urls]
-Homepage = "https://github.com/SFr28/ft_package"
