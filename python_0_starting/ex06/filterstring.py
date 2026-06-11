@@ -2,30 +2,39 @@ import sys
 from ft_filter import ft_filter
 
 
-def wordLength(word, length):
-    "Compares the word's length to a given length"
+def checkString(S):
+    """
+    Check if the string is conform
+    """
+    conform = [word for word in S if word.isalnum() or word == " "]
+    assert len(conform) == len(S), "the arguments are bad"
 
-    if (len(word) > length):
+
+def wordLength(S, N):
+    "Compares the word's N to a given N"
+
+    checkString(S)
+
+    if (len(S) > N):
         return True
     else:
         return False
 
 
 def main():
-    if (len(sys.argv) != 3):
-        print("AssertionError: the arguments are bad")
-        sys.exit()
-
-    words = sys.argv[1].split()
-    # help(wordLength)
 
     try:
-        length = int(sys.argv[2])
-        long_words = ft_filter(lambda seq: wordLength(seq, length), words)
+        assert len(sys.argv) == 3, "the arguments are bad"
+
+        words = sys.argv[1].split()
+        N = int(sys.argv[2])
+        long_words = ft_filter(lambda S: wordLength(S, N), words)
         print(long_words)
-    except (ValueError, TypeError):
-        print("AssertionError: second argument is not an integer")
-        sys.exit()
+
+    except AssertionError as error:
+        print("Assertion error:", error)
+    except Exception as error:
+        print("Error:", error)
 
 
 if __name__ == "__main__":
