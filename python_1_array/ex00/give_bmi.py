@@ -37,10 +37,16 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
     result = []
 
-    for x in bmi:
-        if x > limit:
-            result.append(True)
-        else:
-            result.append(False)
+    try:
+        if not isinstance(bmi, list):
+            raise TypeError("bmi must be a list")
+        for x in bmi:
+            if x > limit:
+                result.append(True)
+            else:
+                result.append(False)
+
+    except TypeError as e:
+        print(e)
 
     return result
