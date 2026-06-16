@@ -14,13 +14,17 @@ def ft_zoom(img: np.ndarray) -> np.ndarray:
 
 
 def main():
-    img = ft_load("animal.jpeg")
-    print(img)
+    try:
+        img = ft_load("animal.jpeg")
+        print(img)
 
-    zoom = ft_zoom(img)
-    print(zoom)
-    plt.imshow(zoom, cmap='gray')
-    plt.show()
+        zoom = ft_zoom(img)
+        print(zoom)
+        plt.imshow(zoom, cmap='gray')
+        plt.show()
+
+    except Exception as e:
+        print("Error:", e)
 
 
 if __name__ == "__main__":
