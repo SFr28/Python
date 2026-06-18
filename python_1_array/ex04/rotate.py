@@ -18,13 +18,20 @@ def ft_rotate(img: np.ndarray) -> np.ndarray:
 
 def main():
 
-    img = ft_load("animal.jpeg")
-    zoom = ft_zoom(img)
-    print(zoom)
+    try:
+        img = ft_load("animal.jpeg")
+        if img is None:
+            raise ValueError("an error occured during loading")
 
-    rotated = ft_rotate(zoom)
-    plt.imshow(rotated, cmap='gray')
-    plt.show()
+        zoom = ft_zoom(img)
+        print(zoom)
+
+        rotated = ft_rotate(zoom)
+        plt.imshow(rotated, cmap='gray')
+        plt.show()
+
+    except Exception as e:
+        print("Error:", e)
 
 
 if __name__ == "__main__":
