@@ -6,8 +6,6 @@ from load_image import ft_load
 def ft_invert(array) -> np.ndarray:
     '''Inverts the colors of the image received'''
 
-    print("invert")
-
     if array.ndim != 3 or array.shape[2] != 3:
         raise TypeError("Image must be represented by a 3D array \
         with 3 color codes")
@@ -25,8 +23,6 @@ def ft_invert(array) -> np.ndarray:
 def ft_red(array) -> np.ndarray:
     '''Colors the image received in red by only keeping \
     the red component (RGB => 1st component)'''
-
-    print("red")
 
     if array.ndim != 3 or array.shape[2] != 3:
         raise TypeError("Image must be represented by a 3D array \
@@ -47,8 +43,6 @@ def ft_green(array) -> np.ndarray:
     '''Colors the image received in green by only keeping \
     the green component (RGB => 2nd component)'''
 
-    print("green")
-
     if array.ndim != 3 or array.shape[2] != 3:
         raise TypeError("Image must be represented by a 3D array \
         with 3 color codes")
@@ -68,8 +62,6 @@ def ft_blue(array) -> np.ndarray:
     '''Colors the image received in blue by only keeping \
     the blue component (RGB => 3rd component)'''
 
-    print("blue")
-
     if array.ndim != 3 or array.shape[2] != 3:
         raise TypeError("Image must be represented by a 3D array \
         with 3 color codes")
@@ -87,8 +79,6 @@ def ft_blue(array) -> np.ndarray:
 
 def ft_grey(array) -> np.ndarray:
     '''Colors the image received in grey by calculating the mean value'''
-
-    print("grey")
 
     if array.ndim != 3 or array.shape[2] != 3:
         raise TypeError("Image must be represented by a 3D array \
@@ -108,17 +98,20 @@ def main():
 
     try:
         array = ft_load("landscape.jpg")
+        if array is None:
+            raise ValueError("an error occured during loading")
 
         ft_invert(array)
         ft_red(array)
         ft_green(array)
         ft_blue(array)
         ft_grey(array)
+        print(ft_invert.__doc__)
 
         plt.show()
 
     except (ValueError, TypeError) as e:
-        print(e)
+        print("Error:", e)
 
 
 if __name__ == "__main__":
