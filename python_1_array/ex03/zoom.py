@@ -16,6 +16,8 @@ def ft_zoom(img: np.ndarray) -> np.ndarray:
 def main():
     try:
         img = ft_load("animal.jpeg")
+        if img is None:
+            raise ValueError("an error occured during loading")
         print(img)
 
         zoom = ft_zoom(img)
