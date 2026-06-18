@@ -6,7 +6,8 @@ def ft_load(path: str) -> np.ndarray:
     '''Loads an image with matplotlib and returns \
     an array with the RGB content'''
     try:
-        if path.find(".jpg") != (len(path) - 4) and path.find(".jpeg") != (len(path) - 5):
+        if path.find(".jpg") != len(path) - 4 and\
+                path.find(".jpeg") != len(path) - 5:
             raise TypeError("not a jpg or jpeg")
         img = mpimg.imread(path)
         array = np.asarray(img)
