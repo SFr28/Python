@@ -17,7 +17,7 @@ def main():
     try:
         img = ft_load("animal.jpeg")
         if img is None:
-            raise ValueError("an error occured during loading")
+            raise Exception("an error occured during loading")
         print(img)
 
         zoom = ft_zoom(img)

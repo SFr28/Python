@@ -14,6 +14,10 @@ def give_bmi(h: list[int | float], w: list[int | float]) -> list[int | float]:
     bmi_ufunc = np.frompyfunc(calculate_bmi, 2, 1)
 
     try:
+        if not isinstance(h, list):
+            raise TypeError("Height must be a list")
+        if not isinstance(w, list):
+            raise TypeError("Weight must be a list")
         if len(h) != len(w):
             raise TypeError("Both lists must have the same size")
 
@@ -41,6 +45,8 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     try:
         if not isinstance(bmi, list):
             raise TypeError("bmi must be a list")
+        if not isinstance(limit, int):
+            raise TypeError("limit must be an int")
         for x in bmi:
             if x > limit:
                 result.append(True)
