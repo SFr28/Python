@@ -7,18 +7,24 @@ def aff_life(data):
         Fonction to get the correct country's data and to create a graph.
     '''
 
-    xpoints = data.columns[1:].astype(int)
-    ypoints = data[data["country"] == "France"].values[0][1:]
+    try:
+        xpoints = data.columns[1:].astype(int)
+        if not (data["country"] == "France").any():
+            raise IndexError("No value for France")
+        ypoints = data[data["country"] == "France"].values[0][1:]
 
-    plt.plot(xpoints, ypoints)
+        plt.plot(xpoints, ypoints)
 
-    plt.title('France Life expectancy Projections')
-    plt.xlabel('Year')
-    plt.ylabel('Life expectancy')
+        plt.title('France Life expectancy Projections')
+        plt.xlabel('Year')
+        plt.ylabel('Life expectancy')
 
-    plt.xticks(range(1800, 2081, 40))
+        plt.xticks(range(1800, 2081, 40))
 
-    plt.show()
+        plt.show()
+
+    except IndexError as e:
+        print("Index error:", e)
 
 
 def main():
