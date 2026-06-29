@@ -25,6 +25,6 @@ class calculator:
         """Division"""
         if object != 0:
             self.numbers = [nb / object for nb in self.numbers]
+            print(self.numbers)
         else:
             print("Division by 0 is not allowed")
-        print(self.numbers)
