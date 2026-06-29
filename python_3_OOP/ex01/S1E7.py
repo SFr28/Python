@@ -49,6 +49,6 @@ class Lannister(Character):
         return self.__str__()
 
     @classmethod
-    def create_lannister(self, first_name, is_alive):
+    def create_lannister(cls, first_name, is_alive):
         """Creating a Lannister member"""
-        return Lannister(first_name, is_alive)
+        return cls(first_name, is_alive)
