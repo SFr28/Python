@@ -23,11 +23,11 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                     case "var":
                         ft_variance(serie)
         except (ValueError, TypeError, KeyError):
-            print("Error")
+            print("ERROR")
 
     else:
         for i in kwargs:
-            print("Error")
+            print("ERROR")
 
 
 def ft_mean(serie: list) -> None:
